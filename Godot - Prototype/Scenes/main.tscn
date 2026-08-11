@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://dfuj3kcpn82yy"]
+
+[ext_resource type="PackedScene" uid="uid://b1a8fu84gd7fn" path="res://Scenes/player.tscn" id="1_bo1nx"]
+[ext_resource type="Texture2D" uid="uid://b8mr3qih8tqt" path="res://Assets/rainbow_spritesheet.png" id="2_8gbba"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0xm2m"]
+texture = ExtResource("2_8gbba")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSet" id="TileSet_5s7be"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_0xm2m")
+
+[node name="Main" type="Node2D" unique_id=1136160028]
+
+[node name="Player" parent="." unique_id=1368168949 instance=ExtResource("1_bo1nx")]
+position = Vector2(48, -168)
+
+[node name="TileMap" type="TileMap" parent="." unique_id=1491837005]
+tile_set = SubResource("TileSet_5s7be")
+format = 2
+layer_0/tile_data = PackedInt32Array(65530, 0, 0, 65531, 0, 0, 65532, 0, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 65529, 0, 0, 65528, 0, 0, 65523, 0, 0, 65524, 0, 0, 65525, 0, 0, 65526, 0, 0, 65527, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 0, 0, 20, 0, 0, 21, 0, 0, 22, 0, 0, 65515, 0, 0, 65516, 0, 0, 65517, 0, 0, 65518, 0, 0, 65519, 0, 0, 65520, 0, 0, 65521, 0, 0, 65522, 0, 0, 23, 0, 0, 24, 0, 0, -720917, 0, 0, -655381, 0, 0, -589845, 0, 0, -524309, 0, 0, -458773, 0, 0, -393237, 0, 0, -327701, 0, 0, -262165, 0, 0, -196629, 0, 0, -131093, 0, 0, -65557, 0, 0, -21, 0, 0, -786408, 0, 0, -720872, 0, 0, -655336, 0, 0, -589800, 0, 0, -524264, 0, 0, -458728, 0, 0, -393192, 0, 0, -327656, 0, 0, -262120, 0, 0, -196584, 0, 0, -131048, 0, 0, -65512, 0, 0)
