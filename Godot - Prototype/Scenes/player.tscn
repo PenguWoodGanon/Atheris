@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bi3g7c541551m" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://bten3nyp33qse" path="res://icon.svg" id="1_v0iea"]
+[ext_resource type="Texture2D" uid="uid://c72hyxl75h8it" path="res://Assets/proto_gun.png" id="3_6t5aa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnnui"]
 size = Vector2(127, 130)
@@ -11,6 +12,10 @@ script = ExtResource("1_cvnsp")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1615153768]
 texture = ExtResource("1_v0iea")
+
+[node name="ProtoGun" type="Sprite2D" parent="Sprite2D" unique_id=1499163105]
+position = Vector2(72, -7)
+texture = ExtResource("3_6t5aa")
 
 [node name="HitBox" type="CollisionShape2D" parent="." unique_id=2092673189]
 position = Vector2(-0.5, 0)

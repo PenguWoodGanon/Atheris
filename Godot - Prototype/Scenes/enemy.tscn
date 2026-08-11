@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://b075p5ya0va8g"]
+
+[ext_resource type="Script" uid="uid://bjyou8savhm8n" path="res://Scripts/enemy.gd" id="1_1f0kj"]
+[ext_resource type="Texture2D" uid="uid://b8mr3qih8tqt" path="res://Assets/rainbow_spritesheet.png" id="1_hghv2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1f0kj"]
+size = Vector2(63, 64)
+
+[node name="Enemy" type="CharacterBody2D" unique_id=1675906054]
+script = ExtResource("1_1f0kj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=927522642]
+scale = Vector2(2, 2)
+texture = ExtResource("1_hghv2")
+region_enabled = true
+region_rect = Rect2(160, 0, 32, 32)
+
+[node name="HitBox" type="CollisionShape2D" parent="." unique_id=485270505]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_1f0kj")
+
+[node name="KillBox" type="Button" parent="." unique_id=1492551477]
+offset_left = 33.000004
+offset_top = -32.999996
+offset_right = 99.0
+offset_bottom = 33.000004
+rotation = 1.5704517
+text = ":D"
+flat = true
+
+[connection signal="pressed" from="KillBox" to="." method="_on_kill_box_pressed"]
