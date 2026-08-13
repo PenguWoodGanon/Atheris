@@ -42,3 +42,4 @@ func _physics_process(delta):
 func _on_dashtimer_timeout():
 	#Reset Speed
 	SPEED = 500.0
+	
