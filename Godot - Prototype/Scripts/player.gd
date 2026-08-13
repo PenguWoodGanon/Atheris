@@ -2,11 +2,14 @@ extends CharacterBody2D
 
 var SPEED = 500.0
 const JUMP_VELOCITY = -500.0
+var dashcount = 0
 
 @onready var sprite_2d = $Sprite2D
 @onready var dashtimer = $dashtimer
 
 func _physics_process(delta):
+	if is_on_floor():
+		dashcount = 0
 	#Gravity
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -20,9 +23,19 @@ func _physics_process(delta):
 	
 	#Dash
 	if Input.is_action_just_pressed("dash"):
-		dashtimer.start()
-		SPEED *= 8
-		velocity.x = direction * SPEED
+		if is_on_floor():
+			dashtimer.start()
+			SPEED *= 8
+			velocity.x = direction * SPEED
+			print(dashcount)
+		elif not is_on_floor() and dashcount == 0:
+			dashcount += 1
+			dashtimer.start()
+			SPEED *= 8
+			velocity.x = direction * SPEED
+			print(dashcount)
+		elif not is_on_floor() and dashcount == 1:
+			print(dashcount)
 	
 	#Flip
 	if direction > 0:
