@@ -22,3 +22,8 @@ position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_xnnui")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=173669947]
+
+[node name="dashtimer" type="Timer" parent="." unique_id=1644530112]
+wait_time = 0.12
+
+[connection signal="timeout" from="dashtimer" to="." method="_on_dashtimer_timeout"]
