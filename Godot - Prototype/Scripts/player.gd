@@ -34,9 +34,7 @@ func _physics_process(delta):
 			SPEED *= 8
 			velocity.x = direction * SPEED
 			print(dashcount)
-		elif not is_on_floor() and dashcount == 1:
-			print(dashcount)
-	
+
 	#Flip
 	if direction > 0:
 		sprite_2d.flip_h = false
