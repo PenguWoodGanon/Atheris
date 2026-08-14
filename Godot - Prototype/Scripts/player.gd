@@ -35,6 +35,7 @@ func _physics_process(delta):
 			velocity.x = direction * SPEED
 			print(dashcount)
 
+
 	#Flip
 	if direction > 0:
 		sprite_2d.flip_h = false
@@ -49,8 +50,7 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-
+#Reset Speed
 func _on_dashtimer_timeout():
-	#Reset Speed
 	SPEED = 500.0
 	
