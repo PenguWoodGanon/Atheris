@@ -1,5 +1,76 @@
 [gd_scene format=3 uid="uid://bg1jusfy0fmaj"]
 
+[ext_resource type="Texture2D" uid="uid://evo6ccde5fcr" path="res://Assets/Title.png" id="1_28flt"]
+[ext_resource type="Texture2D" uid="uid://dorgj6lck2i4j" path="res://Assets/space_background.png" id="2_48xlc"]
+
+[sub_resource type="Animation" id="Animation_48xlc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Title:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(566, -88.99999)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Title:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_1ehe0"]
+resource_name = "enter"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Title:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(566, -88.99999), Vector2(566, 119.00001)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Title:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ce3w2"]
+_data = {
+&"RESET": SubResource("Animation_48xlc"),
+&"enter": SubResource("Animation_1ehe0")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kjl20"]
+bg_color = Color(0.50928617, 0.5092862, 0.509286, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+shadow_color = Color(0.30507714, 0.30507714, 0.30507714, 0.6)
+
 [node name="main_menu" type="Control" unique_id=1902240584]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +78,63 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="." unique_id=1288217024]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_48xlc")
+
+[node name="Title" type="Sprite2D" parent="." unique_id=222279019]
+position = Vector2(566, -88.99999)
+scale = Vector2(0.6735537, 0.6735537)
+texture = ExtResource("1_28flt")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1906444229]
+libraries/ = SubResource("AnimationLibrary_ce3w2")
+autoplay = &"enter"
+
+[node name="Buttons" type="Node" parent="." unique_id=1257279841]
+
+[node name="Play" type="Button" parent="Buttons" unique_id=1055825294]
+offset_left = 82.0
+offset_top = 252.0
+offset_right = 378.0
+offset_bottom = 321.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 33
+theme_override_styles/normal = SubResource("StyleBoxFlat_kjl20")
+text = "Play                    "
+
+[node name="Profile" type="Button" parent="Buttons" unique_id=1012684052]
+offset_left = 82.0
+offset_top = 340.0
+offset_right = 378.0
+offset_bottom = 409.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 33
+theme_override_styles/normal = SubResource("StyleBoxFlat_kjl20")
+text = "Profile                "
+
+[node name="Settings" type="Button" parent="Buttons" unique_id=697964123]
+offset_left = 82.0
+offset_top = 428.0
+offset_right = 378.0
+offset_bottom = 497.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 33
+theme_override_styles/normal = SubResource("StyleBoxFlat_kjl20")
+text = "Settings             "
+
+[node name="Exit" type="Button" parent="Buttons" unique_id=813451117]
+offset_left = 82.0
+offset_top = 516.0
+offset_right = 378.0
+offset_bottom = 585.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 33
+theme_override_styles/normal = SubResource("StyleBoxFlat_kjl20")
+text = "Exit                    "

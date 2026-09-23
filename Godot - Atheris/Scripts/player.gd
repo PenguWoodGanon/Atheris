@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 #--------VARIABLES--------
-var SPEED = 500.0
-const JUMP_VELOCITY = -500.0
+var SPEED = 150.0
+const JUMP_VELOCITY = -300.0
 var dashcount = 0
 var wall_jump_count = 0
 
@@ -67,5 +67,5 @@ func _physics_process(delta):
 #Reset Speed
 func _on_dashtimer_timeout():
 	sprite_2d.play("default")
-	SPEED = 500.0
+	SPEED = 100.0
 	
