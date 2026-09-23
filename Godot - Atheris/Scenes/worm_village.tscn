@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://b1a8fu84gd7fn" path="res://Scenes/player.tscn" id="2_c8dux"]
 [ext_resource type="Texture2D" uid="uid://bujc4bdipcvdn" path="res://Assets/sky_tilemap.png" id="3_c8dux"]
 [ext_resource type="Texture2D" uid="uid://canj5lj6wnvp6" path="res://Assets/WarpBoard.png" id="4_g233e"]
+[ext_resource type="Script" uid="uid://cvuq52wmhxqfx" path="res://Scripts/warp_board_wv.gd" id="4_ktcwj"]
+[ext_resource type="Texture2D" uid="uid://g7d4f2eeqqv6" path="res://Assets/wall_art.png" id="5_pnogg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pnogg"]
 texture = ExtResource("3_c8dux")
@@ -62,6 +64,26 @@ position = Vector2(106, -27)
 texture = ExtResource("4_g233e")
 region_enabled = true
 region_rect = Rect2(0, 0, 64, 54)
+script = ExtResource("4_ktcwj")
+
+[node name="Button" type="Button" parent="WarpBoard" unique_id=1133543057]
+offset_left = -32.0
+offset_top = -27.0
+offset_right = 31.0
+offset_bottom = 12.0
+flat = true
 
 [node name="Player" parent="." unique_id=1368168949 instance=ExtResource("2_c8dux")]
 position = Vector2(62.000004, -18.000008)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=139265975]
+zoom = Vector2(4, 4)
+position_smoothing_enabled = true
+
+[node name="WallArt" type="Sprite2D" parent="Player/Camera2D" unique_id=1908097350]
+visible = false
+position = Vector2(-7.6293945e-06, 7.6293945e-06)
+scale = Vector2(1.3857448, 1.3912452)
+texture = ExtResource("5_pnogg")
+
+[connection signal="pressed" from="WarpBoard/Button" to="WarpBoard" method="_on_button_pressed"]

@@ -118,11 +118,6 @@ autoplay = "idle"
 position = Vector2(-13.401895, -6.829707)
 shape = SubResource("RectangleShape2D_xnnui")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=173669947]
-scale = Vector2(-0.048685744, -0.19111031)
-zoom = Vector2(4, 4)
-position_smoothing_enabled = true
-
 [node name="dashtimer" type="Timer" parent="." unique_id=1644530112]
 wait_time = 0.12
 
